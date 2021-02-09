@@ -3,6 +3,8 @@ import cats.syntax.all._
 
 import scala.concurrent.duration._
 import cats.effect.std.Random
+import cats.effect.kernel.Fiber
+import java.util.concurrent.Future
 
 object HelloCats extends IOApp.Simple {
 

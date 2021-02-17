@@ -12,8 +12,14 @@ lazy val root = (project in file("."))
     name := "ce101",
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.13.1",
-      "org.typelevel" %% "cats-core" % "2.3.1",
-      "org.typelevel" %% "cats-effect" % "3.0.0-M5",
+      "org.typelevel" %% "cats-core" % "2.4.1",
+      // "core" module - IO, IOApp, schedulers
+      // This pulls in the kernel and std modules automatically.
+      "org.typelevel" %% "cats-effect" % "3.0.0-RC1",
+      // concurrency abstractions and primitives (Concurrent, Sync, Async etc.)
+      "org.typelevel" %% "cats-effect-kernel" % "3.0.0-RC1",
+      // standard "effect" library (Queues, Console, Random etc.)
+      "org.typelevel" %% "cats-effect-std" % "3.0.0-RC1",
       "org.http4s" %% "http4s-dsl" % http4sVersion,
       "org.http4s" %% "http4s-blaze-server" % http4sVersion,
       "org.http4s" %% "http4s-blaze-client" % http4sVersion,
